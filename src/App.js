@@ -1,17 +1,33 @@
-import React from 'react';
+import React, { useState } from "react";
+import { Canvas } from "@react-three/fiber";
+import "./style.css";
+import { SceneContainer } from "./SceneContainer";
+import Card from "./HTML/Card";
+import { PositionContext } from "./context";
 
 function App() {
+  const [context, setContext] = useState({
+    y: 30,
+    x: 130,
+    location: "N/A",
+    display: "none",
+    rotation: true,
+    rotationSpeed: 0.001,
+    details: {
+      country: "",
+      flags: [],
+    },
+    isSingle: false,
+  });
   return (
-    <div style={{ textAlign: 'center' }}>
-      <header>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <PositionContext.Provider value={[context, setContext]}>
+        <Card />
+        <Canvas shadows className="globeCanvas">
+          <SceneContainer />
+        </Canvas>
+      </PositionContext.Provider>
+    </>
   );
 }
 
