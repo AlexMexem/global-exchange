@@ -1,8 +1,9 @@
-import React, { Suspense, useRef, useEffect } from "react";
+import React, { Suspense, useRef } from "react";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { Sphere } from "./Components/Sphere";
-import { Bloom, EffectComposer } from "@react-three/postprocessing";
+/*import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
+*/
 import { DotSphere } from "./Components/DotSphere";
 import { LandMoss } from "./Components/LandMass";
 
@@ -96,6 +97,7 @@ export function SceneContainer() {
         shadow-bias={-0.0001}
       />
 
+      {/* 
       <EffectComposer>
         <Bloom
           blendFunction={BlendFunction.ADD}
@@ -106,6 +108,7 @@ export function SceneContainer() {
           luminanceSmoothing={3}
         ></Bloom>
       </EffectComposer>
+      */}
     </Suspense>
   );
 }
