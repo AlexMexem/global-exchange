@@ -1,6 +1,6 @@
 import { useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three";
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef, useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
 import { PositionContext } from "../context";
 
@@ -25,6 +25,12 @@ export function LandMoss() {
   /* const [alpha] = useLoader(TextureLoader, [
     assetUrls + "textures/earth/new/earthAlpha2.png",
   ]); */
+
+  useEffect(() => {
+    if (land) {
+      land.current.rotation.y += -0.8;
+    }
+  }, []);
 
   useFrame(() => {
     if (context.rotation === true) {

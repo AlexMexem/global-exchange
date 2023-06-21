@@ -1,6 +1,6 @@
 import { useLoader } from "@react-three/fiber";
 import { DoubleSide, TextureLoader } from "three";
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef, useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Color } from "three";
 import { Location } from "./Location";
@@ -29,6 +29,12 @@ export function Sphere() {
   //colorMap.offset.x = 1.212;
   //colorMap.offset.y = -0.02;
   //colorMap.wrapS = RepeatWrapping;
+
+  useEffect(() => {
+    if (boxRef) {
+      boxRef.current.rotation.y += -0.8;
+    }
+  }, []);
 
   useFrame(() => {
     if (context.rotation === true) {

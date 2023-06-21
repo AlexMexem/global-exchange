@@ -1,7 +1,7 @@
 import { useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three";
 import { useFrame } from "@react-three/fiber";
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef, useEffect } from "react";
 import { PositionContext } from "../context";
 
 export function DotSphere({ meshPosition }) {
@@ -21,6 +21,12 @@ export function DotSphere({ meshPosition }) {
   const [colorMap] = useLoader(TextureLoader, [
     assetUrls + "textures/earth/new/earthAlpha.png",
   ]);
+
+  useEffect(() => {
+    if (points) {
+      points.current.rotation.y += -0.8;
+    }
+  }, []);
 
   useFrame(() => {
     if (context.rotation === true) {
