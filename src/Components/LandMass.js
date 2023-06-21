@@ -29,8 +29,6 @@ export function LandMoss() {
   useFrame(() => {
     if (context.rotation === true) {
       land.current.rotation.y += context.rotationSpeed;
-    } else {
-      land.current.rotation.y += context.rotationSpeed;
     }
   });
 

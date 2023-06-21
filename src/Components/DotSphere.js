@@ -25,8 +25,6 @@ export function DotSphere({ meshPosition }) {
   useFrame(() => {
     if (context.rotation === true) {
       points.current.rotation.y += context.rotationSpeed;
-    } else {
-      points.current.rotation.y += context.rotationSpeed;
     }
   });
 

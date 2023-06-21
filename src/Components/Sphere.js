@@ -33,8 +33,6 @@ export function Sphere() {
   useFrame(() => {
     if (context.rotation === true) {
       boxRef.current.rotation.y += context.rotationSpeed;
-    } else {
-      boxRef.current.rotation.y += context.rotationSpeed;
     }
   });
 

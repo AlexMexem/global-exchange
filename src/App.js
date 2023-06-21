@@ -11,7 +11,7 @@ function App() {
     x: 130,
     location: "N/A",
     display: "none",
-    rotation: true,
+    rotation: false,
     rotationSpeed: 0.001,
     details: {
       country: "",
