@@ -69,3 +69,6 @@ body {
   background-size: cover;
   border-radius: 100%;
 }
+.card-x:hover {
+  cursor: pointer;
+}
